@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Personal Workspace Connector</title>
+<meta name="description" content="How Personal Workspace Connector accesses, uses, stores and shares Google user data, including its Limited Use commitment under the Google API Services User Data Policy.">
+<link rel="canonical" href="https://fed3c3sa.github.io/privacy.html">
+<link rel="alternate" hreflang="en" href="https://fed3c3sa.github.io/privacy.html">
+<link rel="alternate" hreflang="it" href="https://fed3c3sa.github.io/it/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://fed3c3sa.github.io/privacy.html">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">Personal Workspace Connector</a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/privacy.html" aria-current="page">Privacy Policy</a>
+      <a href="/terms.html">Terms</a>
+      <span class="sep">·</span>
+      <a href="/it/privacy.html" hreflang="it" lang="it">Italiano</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Privacy Policy</h1>
+  <p class="lede">How Personal Workspace Connector accesses, uses, stores and shares Google user data.</p>
+  <p class="updated">Effective 15 September 2026 · Last updated 15 September 2026</p>
+
+  <h2>1. Who this policy covers</h2>
+  <p>This policy applies to <strong>Personal Workspace Connector</strong> (&ldquo;the application&rdquo;), a self-hosted application operated by a single private individual (&ldquo;the operator&rdquo;) on their own computer, together with the Google Cloud project and OAuth client that support it.</p>
+  <p>The application is a personal-use tool. It has no user accounts, no sign-up, no customers and no public distribution. The only Google accounts it connects to are accounts the operator personally controls or has been directly authorised to access. Every reference below to &ldquo;you&rdquo; or &ldquo;the user&rdquo; means the person who signs in at Google's consent screen and grants the application access to their own account.</p>
+
+  <div class="note">
+    <p><strong>In short.</strong> The application runs on one person's computer and calls Google's APIs directly. There is no server, no database and no company behind it. Google user data is not collected, not stored remotely, not sold, not used for advertising, not used to train any model, and not shared with anyone — with one exception, disclosed in full in section 6: the content you explicitly ask your local AI assistant to work with is transmitted to that assistant's provider, because that is how the assistant processes your request.</p>
+  </div>
+
+  <h2>2. What Google user data the application accesses</h2>
+  <p>The application accesses Google user data only through Google's official APIs, and only within the OAuth scopes you approve on Google's consent screen when you connect an account. It requests no other data.</p>
+  <p>Depending on which capabilities the operator has enabled in their installation, the application may request the following scopes. The authoritative list for your account is always the one Google shows you on the consent screen at the moment you grant access, and the list you can inspect at any time under your Google Account's connections settings.</p>
+
+  <table class="scopes">
+    <thead>
+      <tr><th>Google service</th><th>Scopes that may be requested</th><th>What it is used for</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Account identity</td>
+        <td><code>openid</code>, <code>userinfo.email</code>, <code>userinfo.profile</code></td>
+        <td>To confirm which account a given local server is connected to, so that mailboxes are not mixed up.</td>
+      </tr>
+      <tr>
+        <td>Gmail</td>
+        <td><code>gmail.readonly</code>, <code>gmail.send</code>, <code>gmail.compose</code>, <code>gmail.modify</code>, <code>gmail.labels</code>, <code>gmail.settings.basic</code></td>
+        <td>To read and search messages, create drafts, send messages, and apply or remove labels, when the operator asks for it.</td>
+      </tr>
+      <tr>
+        <td>Google Calendar</td>
+        <td><code>calendar</code>, <code>calendar.readonly</code>, <code>calendar.events</code></td>
+        <td>To list calendars, read events, and create or modify events, when the operator asks for it.</td>
+      </tr>
+      <tr>
+        <td>Google Drive</td>
+        <td><code>drive</code>, <code>drive.readonly</code>, <code>drive.file</code></td>
+        <td>To find, read and create files, when the operator asks for it.</td>
+      </tr>
+      <tr>
+        <td>Docs, Sheets, Slides, Forms, Tasks, Chat, Contacts</td>
+        <td><code>documents</code>, <code>spreadsheets</code>, <code>presentations</code>, <code>forms.body</code>, <code>tasks</code>, <code>chat.messages</code>, <code>contacts</code> and their <code>.readonly</code> variants</td>
+        <td>To read and edit the corresponding items, only if the operator has enabled those tools in the installation.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Several of these are classified by Google as <strong>sensitive</strong> or <strong>restricted</strong> scopes, in particular the Gmail scopes. They are requested because the application's purpose is to let its operator work with their own mailbox — reading it is not sufficient if the operator also wants to draft replies or file messages. An operator who only needs to read and search can run the application in read-only mode, which limits the request accordingly.</p>
+
+  <h2>3. What the data is used for</h2>
+  <p>Google user data is used for exactly one purpose: to carry out, in real time, the specific instruction the operator has just given. If the operator asks to see the last messages in a mailbox, the application calls the Gmail API and returns those messages. If nothing is asked, nothing is fetched.</p>
+  <p>Google user data is <strong>not</strong> used to:</p>
+  <ul>
+    <li>serve, target, personalise or measure advertising of any kind;</li>
+    <li>build profiles, audiences, scores or any derived dataset;</li>
+    <li>train, fine-tune or evaluate any machine-learning model operated by the developer;</li>
+    <li>produce analytics, telemetry, usage statistics or crash reports;</li>
+    <li>generate revenue, directly or indirectly. The application is not monetised in any way.</li>
+  </ul>
+
+  <h2>4. Limited Use commitment</h2>
+  <p>Personal Workspace Connector's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the <a href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes" rel="noopener">Limited Use</a> requirements.</p>
+  <p>Concretely, and in the terms of that policy:</p>
+  <ul>
+    <li>data obtained through Google APIs is used only to provide or improve the user-facing features described on the <a href="/">home page</a>, and is not transferred or sold for any other purpose;</li>
+    <li>data is not transferred to third parties except as strictly necessary to provide those features to the user, to comply with applicable law, or as part of the user's own explicit request;</li>
+    <li>data is not used, and will not be used, for serving advertisements, including retargeting or personalised advertising;</li>
+    <li>no human reads the data, other than the operator themselves reading their own data through the application. The developer and the operator are the same individual, and there is no support team, contractor or reviewer with access.</li>
+  </ul>
+  <p>Google user data is also not used to develop, improve or train generalised or non-personalised artificial-intelligence or machine-learning models by the operator.</p>
+
+  <h2>5. How and where data is stored</h2>
+  <p>The application has no backend infrastructure. There is no server, database, object store, queue or log aggregator operated by the developer, and no cloud account where Google user data is deposited.</p>
+  <ul>
+    <li><strong>Message and file content is not stored.</strong> It is fetched from Google's API when requested, passed to the requesting assistant, and discarded. The application keeps no copy, index, cache or archive of it.</li>
+    <li><strong>OAuth tokens are stored locally.</strong> The access token and refresh token issued by Google are written to a directory on the operator's own computer, one directory per connected account. They never leave that machine except to be presented back to Google when refreshing access.</li>
+    <li><strong>Credentials are local.</strong> The OAuth client ID and client secret live in the local configuration file on the operator's computer.</li>
+    <li>The computer running the application is protected by full-disk encryption and the operating system's standard account protections.</li>
+  </ul>
+  <p>This website itself is a set of static pages hosted on GitHub Pages. It sets no cookies, runs no scripts, embeds no third-party fonts or trackers, and performs no analytics. GitHub, as the host, may process standard server request data such as IP addresses in accordance with the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>. No Google user data is ever sent to this website.</p>
+
+  <h2>6. Who the data is disclosed to</h2>
+  <p>Google user data is not sold, rented, licensed, published or shared with any third party for their own purposes. There are exactly two parties that receive it, and both do so because they are necessary to perform the operator's request:</p>
+  <ol>
+    <li><strong>Google</strong>, which is the source of the data and receives the API calls that retrieve or modify it.</li>
+    <li><strong>The AI assistant application the operator is using locally, and its provider.</strong> This is the disclosure that matters most, and it is inherent to what the tool does: when the operator asks their assistant to read, summarise or reply to a message, the content of that message becomes part of the conversation with the assistant, and is therefore transmitted to and processed by the assistant's provider under that provider's own privacy terms. The application does not control, and cannot limit, what the provider does with the content of the conversation. Data reaches the assistant only in response to an explicit instruction from the operator; nothing is streamed or synchronised in the background.</li>
+  </ol>
+  <p>Data may additionally be disclosed where required by a valid legal obligation. Given the personal, single-operator nature of the application, no such disclosure has been made or is anticipated.</p>
+
+  <h2>7. Retention and deletion</h2>
+  <p>Because content is never stored, there is no retention period to apply to it: it exists only for the duration of the request that fetched it.</p>
+  <p>OAuth tokens are retained until they expire, are revoked, or are deleted. To erase them, the operator deletes the local credentials directory for the account concerned; access ends immediately. Revoking access at Google (section 8) invalidates the tokens regardless of whether the local copy is removed.</p>
+
+  <h2>8. Your control over access</h2>
+  <p>Access is granted by you, at Google's consent screen, and can be withdrawn by you at any time and without involving the operator:</p>
+  <ul>
+    <li>go to <a href="https://myaccount.google.com/connections" rel="noopener">myaccount.google.com/connections</a>;</li>
+    <li>select <strong>Personal Workspace Connector</strong>;</li>
+    <li>choose to remove its access.</li>
+  </ul>
+  <p>From that moment the application can no longer reach the account, and any token held locally stops working. Because no content was retained, nothing remains to be deleted on the application's side.</p>
+
+  <h2>9. Security</h2>
+  <p>The application runs locally and communicates with Google over TLS. The OAuth flow uses PKCE and single-use authorisation codes. Tokens and the client secret are treated as credentials: they are not committed to version control, not shared, and rotated if exposure is suspected.</p>
+  <p>Two limitations are stated plainly rather than glossed over. First, anyone with access to the operator's unlocked computer could reach the locally stored tokens; the security of the data therefore rests on the security of that machine. Second, content retrieved from a mailbox may itself contain text crafted to influence an AI assistant that reads it. The operator is aware of this class of risk and configures the application's write permissions accordingly.</p>
+
+  <h2>10. Legal basis and jurisdiction</h2>
+  <p>The application processes data belonging to its own operator, in the course of a purely personal activity. Where the General Data Protection Regulation (EU) 2016/679 is nonetheless considered applicable, the legal basis for processing is the consent of the data subject, given through Google's consent screen and revocable at any time as described in section 8.</p>
+
+  <h2>11. Children</h2>
+  <p>The application is not directed at children, is not made available to anyone other than its operator, and does not knowingly process the data of anyone under the age of 16.</p>
+
+  <h2>12. Changes to this policy</h2>
+  <p>If the application's data handling changes — for instance if additional Google APIs are enabled — this policy is updated before the change takes effect, and the &ldquo;last updated&rdquo; date above is revised. The full revision history of this page is public in the <a href="https://github.com/fed3c3sa/fed3c3sa.github.io/commits/main/privacy.html" rel="noopener">repository's commit history</a>.</p>
+
+  <h2>13. Contact</h2>
+  <p>Questions about this policy, or about how the application handles data, can be raised publicly at <a href="https://github.com/fed3c3sa/fed3c3sa.github.io/issues" rel="noopener">github.com/fed3c3sa/fed3c3sa.github.io/issues</a>. This is the contact channel for an application whose entire user base is one person; requests are answered there.</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a href="/">Home</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Service</a> · <a href="/it/privacy.html" hreflang="it" lang="it">Italiano</a></p>
+    <p class="disclaimer">Personal Workspace Connector is an independent personal project. It is not affiliated with, endorsed by, or sponsored by Google LLC or Anthropic PBC. Google Workspace, Gmail, Google Calendar and Google Drive are trademarks of Google LLC.</p>
+  </div>
+</footer>
+
+</body>
+</html>

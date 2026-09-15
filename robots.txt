@@ -1,0 +1,6 @@
+# The home page and privacy policy must stay publicly reachable for the
+# Google OAuth client that points at them. Nothing here is disallowed.
+User-agent: *
+Allow: /
+
+Sitemap: https://fed3c3sa.github.io/sitemap.xml

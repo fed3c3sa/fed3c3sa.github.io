@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Personal Workspace Connector</title>
+<meta name="description" content="Personal Workspace Connector è uno strumento self-hosted che permette a una singola persona di collegare più account Google personali a un assistente AI locale. Gira sul computer del proprietario e non invia dati a server di terze parti.">
+<link rel="canonical" href="https://fed3c3sa.github.io/it/">
+<link rel="alternate" hreflang="en" href="https://fed3c3sa.github.io/">
+<link rel="alternate" hreflang="it" href="https://fed3c3sa.github.io/it/">
+<link rel="alternate" hreflang="x-default" href="https://fed3c3sa.github.io/">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/it/">Personal Workspace Connector</a>
+    <nav class="nav">
+      <a href="/it/" aria-current="page">Home</a>
+      <a href="/it/privacy.html">Privacy Policy</a>
+      <a href="/it/terms.html">Termini</a>
+      <span class="sep">·</span>
+      <a href="/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Personal Workspace Connector</h1>
+  <p class="lede">Uno strumento self-hosted che permette a una singola persona di usare più account Google propri da un assistente AI locale, senza doverli scollegare a turno.</p>
+
+  <h2>Cosa fa questa applicazione</h2>
+  <p>Personal Workspace Connector è un piccolo programma che gira sul computer del suo proprietario. Avvia un server locale per ciascun account Google che il proprietario vuole utilizzare, e rende quegli account accessibili a un assistente AI installato in locale tramite il <a href="https://modelcontextprotocol.io/" rel="noopener">Model Context Protocol</a> (MCP).</p>
+  <p>Il problema che risolve è banale: la maggior parte delle integrazioni gestisce un account Google alla volta, e collegandone un secondo si scollega il primo. Far girare un server locale separato per ogni account consente di tenere collegate contemporaneamente una casella personale e una di lavoro, e di rivolgersi a ciascuna in modo distinto.</p>
+
+  <p>In concreto l'applicazione permette al proprietario di:</p>
+  <ul>
+    <li>leggere, cercare, scrivere, inviare ed etichettare email nei propri account Gmail;</li>
+    <li>leggere e gestire eventi nel proprio Google Calendar;</li>
+    <li>facoltativamente leggere o creare file nel proprio Google Drive, e usare altre API Google Workspace, se il proprietario abilita quegli strumenti;</li>
+    <li>leggere il profilo di base (nome, indirizzo email) dell'account collegato, così che ogni server locale possa mostrare a quale casella è agganciato.</li>
+  </ul>
+
+  <h2>A chi è destinata</h2>
+  <p>È un'applicazione a uso personale. Viene installata e utilizzata da un singolo individuo — il titolare del progetto Google Cloud che la sostiene — per accedere ad account che appartengono a quello stesso individuo. Non è un prodotto, non viene distribuita né venduta, non ha account utente, non ha registrazione e non ha installazioni condivise.</p>
+
+  <div class="note">
+    <p><strong>Qui non c'è nulla da scaricare.</strong> Questo sito esiste per descrivere l'applicazione e pubblicarne la <a href="/it/privacy.html">privacy policy</a>, come richiesto per un client OAuth che richiede accesso a dati utente Google. L'applicazione in sé è un'installazione locale sulla macchina del proprietario.</p>
+  </div>
+
+  <h2>Come funziona</h2>
+  <ol>
+    <li>Il proprietario crea un client OAuth nel proprio progetto Google Cloud e abilita le API Google che intende usare.</li>
+    <li>Configura un'istanza del server locale per ogni account Google, ciascuna con la propria cartella credenziali e la propria porta, sul proprio computer.</li>
+    <li>Al primo utilizzo di un account si apre nel browser la schermata di consenso standard di Google. Il proprietario accede con quell'account e concede l'autorizzazione.</li>
+    <li>Google restituisce un access token e un refresh token, che vengono scritti in una cartella sul computer del proprietario e usati da lì.</li>
+    <li>Da quel momento il server locale chiama direttamente le API di Google per conto del proprietario. Nessun servizio intermedio è coinvolto.</li>
+  </ol>
+
+  <h2>Dove finiscono i dati</h2>
+  <p>L'applicazione non ha un backend proprio. Non esiste un server gestito dallo sviluppatore, né un database, né analytics, né un servizio di logging, né una terza parte che riceva dati utente Google. Il server locale dialoga con le API di Google e con l'assistente AI installato localmente che ha richiesto i dati. Il dettaglio completo, compresi gli scope OAuth coinvolti e l'impegno Limited Use, è nella <a href="/it/privacy.html">privacy policy</a>.</p>
+
+  <h2>Basata su software open source</h2>
+  <p>Il connettore è un'installazione di <a href="https://github.com/taylorwilsdon/google_workspace_mcp" rel="noopener">google_workspace_mcp</a>, progetto open source indipendente rilasciato con licenza MIT, eseguito in modalità self-hosted a singolo utente. Il client OAuth, il progetto Google Cloud e questo sito appartengono alla persona che gestisce l'installazione.</p>
+
+  <h2>Contatti</h2>
+  <p>Domande sull'applicazione o sul trattamento dei dati possono essere poste su <a href="https://github.com/fed3c3sa/fed3c3sa.github.io/issues" rel="noopener">github.com/fed3c3sa/fed3c3sa.github.io/issues</a>.</p>
+
+  <ul class="facts">
+    <li><span class="k">Nome applicazione</span> <span class="v">Personal Workspace Connector</span></li>
+    <li><span class="k">Tipo</span> <span class="v">Applicazione desktop / installata, self-hosted</span></li>
+    <li><span class="k">Distribuzione</span> <span class="v">Nessuna — uso personale a operatore singolo</span></li>
+    <li><span class="k">Home page</span> <span class="v"><a href="https://fed3c3sa.github.io/">fed3c3sa.github.io</a></span></li>
+    <li><span class="k">Privacy policy</span> <span class="v"><a href="/it/privacy.html">fed3c3sa.github.io/it/privacy.html</a></span></li>
+    <li><span class="k">Termini di servizio</span> <span class="v"><a href="/it/terms.html">fed3c3sa.github.io/it/terms.html</a></span></li>
+  </ul>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a href="/it/">Home</a> · <a href="/it/privacy.html">Privacy Policy</a> · <a href="/it/terms.html">Termini di servizio</a> · <a href="/" hreflang="en" lang="en">English</a></p>
+    <p class="disclaimer">Personal Workspace Connector è un progetto personale indipendente. Non è affiliato, approvato né sponsorizzato da Google LLC o Anthropic PBC. Google Workspace, Gmail, Google Calendar e Google Drive sono marchi di Google LLC.</p>
+  </div>
+</footer>
+
+</body>
+</html>
