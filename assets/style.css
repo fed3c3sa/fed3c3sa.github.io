@@ -189,22 +189,28 @@ code {
 
 /* ---------- scope table ---------- */
 
+/* Fixed layout with explicit column widths: with `auto` the service names
+   claimed most of the row and squeezed the scope strings until they broke
+   mid-token (`userinfo.em` / `ail`), which is exactly the column a reader
+   checks a consent screen against. */
 .scopes {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   margin: 1.25rem 0 1.5rem;
   font-size: 0.9rem;
-  display: block;
-  overflow-x: auto;
 }
 
 .scopes th,
 .scopes td {
   text-align: left;
   vertical-align: top;
-  padding: 0.6rem 0.9rem 0.6rem 0;
+  padding: 0.65rem 0.9rem 0.65rem 0;
   border-bottom: 1px solid var(--rule);
 }
+
+.scopes th:last-child,
+.scopes td:last-child { padding-right: 0; }
 
 .scopes th {
   font-size: 0.78rem;
@@ -215,9 +221,47 @@ code {
   border-bottom-color: var(--fg-faint);
 }
 
-.scopes td:first-child { white-space: nowrap; }
+.scopes col.c-service { width: 21%; }
+.scopes col.c-scopes  { width: 43%; }
+.scopes col.c-purpose { width: 36%; }
 
-.scopes code { background: none; padding: 0; }
+.scopes code {
+  background: none;
+  padding: 0;
+  /* break only if a single scope genuinely exceeds the column */
+  overflow-wrap: break-word;
+}
+
+/* Three columns stop working well below ~40rem: the service names get about
+   70px and shred. Stack each row into service / scopes / purpose instead —
+   the three read distinctly enough that the header row isn't needed. */
+@media (max-width: 40rem) {
+  .scopes,
+  .scopes thead,
+  .scopes tbody,
+  .scopes tr,
+  .scopes th,
+  .scopes td {
+    display: block;
+    width: auto;
+  }
+
+  .scopes thead { display: none; }
+
+  .scopes tr {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .scopes td {
+    border: 0;
+    padding: 0 0 0.4rem;
+  }
+
+  .scopes td:first-child { font-weight: 600; }
+  .scopes td:nth-child(2) { color: var(--fg-muted); }
+  .scopes td:last-child { padding-bottom: 0; }
+}
 
 /* ---------- key/value facts ---------- */
 
